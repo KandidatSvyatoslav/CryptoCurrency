@@ -26,20 +26,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf2-0o-42H">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf2-0o-42H">
                                             <rect key="frame" x="8" y="8" width="359" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP0-Pj-boP">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP0-Pj-boP">
                                             <rect key="frame" x="8" y="30" width="359" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZP0-Pj-boP" firstAttribute="trailing" secondItem="EWC-oK-ddK" secondAttribute="trailingMargin" id="Ac9-9L-CcG"/>
+                                        <constraint firstItem="Zf2-0o-42H" firstAttribute="top" secondItem="EWC-oK-ddK" secondAttribute="topMargin" id="Ast-fo-b5T"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ZP0-Pj-boP" secondAttribute="bottom" constant="1" id="WKK-Ip-xay"/>
+                                        <constraint firstItem="ZP0-Pj-boP" firstAttribute="leading" secondItem="EWC-oK-ddK" secondAttribute="leadingMargin" id="XPx-fi-V28"/>
+                                        <constraint firstItem="Zf2-0o-42H" firstAttribute="trailing" secondItem="EWC-oK-ddK" secondAttribute="trailingMargin" id="haM-xZ-5P1"/>
+                                        <constraint firstItem="Zf2-0o-42H" firstAttribute="leading" secondItem="EWC-oK-ddK" secondAttribute="leadingMargin" id="mfv-CC-lqH"/>
+                                        <constraint firstItem="ZP0-Pj-boP" firstAttribute="top" secondItem="Zf2-0o-42H" secondAttribute="bottom" constant="1" id="xDa-tI-VsD"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="costLabel" destination="ZP0-Pj-boP" id="po7-1w-Pdw"/>

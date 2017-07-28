@@ -18,6 +18,7 @@ class CurrencyChangerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var outputPriceLabel: UILabel!
     
     override func viewDidLoad() {
+        navigationController?.isNavigationBarHidden = false
         super.viewDidLoad()
         self.inputValueTextField.delegate = self
         inputValueTextField.text = "0"
@@ -69,6 +70,12 @@ class CurrencyChangerViewController: UIViewController, UITextFieldDelegate {
             view.endEditing(true)
         }
         super.touchesBegan(touches, with: event)
+    }
+   
+    override func viewWillAppear(_ animated: Bool) {
+        //Не скрывать Nav.Controller
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = false
     }
 
     /*
