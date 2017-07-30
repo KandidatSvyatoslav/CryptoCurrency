@@ -11,20 +11,27 @@ import UIKit
 class CurrencyChangerViewController: UIViewController, UITextFieldDelegate {
 
     var currency = Currency()
+    let dollars = "Dollars"
     
     @IBOutlet weak var inputValueTextField: UITextField!
+   
     @IBOutlet weak var inputLabel: UILabel!
+   
     @IBOutlet weak var outputLabel: UILabel!
+    
     @IBOutlet weak var outputPriceLabel: UILabel!
     
     override func viewDidLoad() {
-        navigationController?.isNavigationBarHidden = false
         super.viewDidLoad()
+        
+        navigationController?.isNavigationBarHidden = false
+        
         self.inputValueTextField.delegate = self
+        
         inputValueTextField.text = "0"
         outputPriceLabel.text = "0"
         inputLabel.text = currency.name
-        outputLabel.text = "Dollars"
+        outputLabel.text = dollars
         // Do any additional setup after loading the view.
     }
 
@@ -33,15 +40,15 @@ class CurrencyChangerViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    var dollars = "Dollars"
-    
+    //Нажатие на кнопку Calculate
     @IBAction func pressedCalc(_ sender: Any) {
-        //Нажатие на кнопку Calculate
-        var usd  = Double(currency.priceUsd)!
+        
+        let usd  = Double(currency.priceUsd)!
+    
         if inputLabel.text == currency.name {
             outputPriceLabel.text = String(Double(inputValueTextField.text!)! * usd)
         }
-        if inputLabel.text == dollars {
+       if inputLabel.text == dollars {
             outputPriceLabel.text = String(Double(inputValueTextField.text!)! / usd)
         }
     }
@@ -60,6 +67,7 @@ class CurrencyChangerViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // Ввод только символов из диапазона "0123456789."
         let invalidCharacters = CharacterSet(charactersIn: "0123456789.").inverted
+        
         return string.rangeOfCharacter(from: invalidCharacters, options: [], range: string.startIndex ..<
             string.endIndex) == nil
     }
@@ -69,6 +77,7 @@ class CurrencyChangerViewController: UIViewController, UITextFieldDelegate {
         if (touches.first) != nil {
             view.endEditing(true)
         }
+        
         super.touchesBegan(touches, with: event)
     }
    

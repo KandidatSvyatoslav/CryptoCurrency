@@ -12,5 +12,4 @@ class Currency {
     
     var name: String = ""
     var priceUsd: String = ""
-
 }
