@@ -52,16 +52,17 @@ class CryptoTableViewController: UITableViewController {
     func parseJsonData(data: NSData) -> [Currency] {
        
         do {
-            
             let jsonResult = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as? NSArray
             let currency = Currency()
-            
-            //parse JsonData
+           
             currency.name = String(describing: jsonResult?.value(forKey: "name"))
+            //parse JsonData
             let jsonCurrencies = jsonResult! as [AnyObject]
-            for jsonCurrency in jsonCurrencies {
-            let currency = Currency()
             
+            for jsonCurrency in jsonCurrencies {
+            
+            let currency = Currency()
+        
             currency.name = jsonCurrency["name"] as! String
             currency.priceUsd = jsonCurrency["price_usd"] as! String
            
